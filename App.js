@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StatusBar as ExpoStatusBar} from 'expo-status-bar';
+import { StatusBar, SafeAreaView, StyleSheet, Text, View, TextInput } from 'react-native';
+import SearchBox from './src/components/SearchBox';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app! Hey Hi!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+    <SafeAreaView style={{flex:1}}>
+      <View style={{backgroundColor:'blue', padding:10}}>
+      <TextInput placeholder='Search Resturant' placeholderTextColor="#fff" style={styles.textbox}
+      editable
+      maxLength={40}
+    />
+      </View>
+      <View style={{flex:1, padding:10, backgroundColor:"red"}}>
+        <Text>text input 2 test</Text>
+      </View>
+    </SafeAreaView>
+    <StatusBar style="auto" />
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  textbox: {
+    borderColor:'white',
+    color:'orange',
+  }
+ });
+
